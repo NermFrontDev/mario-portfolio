@@ -1,0 +1,52 @@
+@import url(../../../styles.scss);
+
+p, h1, h2, h3, h4, h5, h6, span, li, a, button {
+  color: #141A25;
+}
+
+.title-website {
+  font-family: var(--Reckless-font-family);
+  font-size: 64px;
+}
+
+.description-website {
+  font-family: var(--Gotham-font-family);
+  font-weight: 400;
+}
+
+.description-bold {
+  font-family: var(--Gotham-Bold-font-family);
+}
+
+.logo-carousel {
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+  width: max-content; // importante: ancho dinámico basado en contenido
+}
+
+.logo {
+  height: 30px;
+  margin: 0 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.padding-bottom-section {
+  padding-bottom: 100px;
+}

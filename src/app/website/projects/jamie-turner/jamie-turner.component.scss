@@ -1,0 +1,95 @@
+@import url(../projects/projects.component.scss);
+
+ol::before {
+  font-family: var(--Gotham-Bold-font-family);
+  font-weight: bold;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0; // elimina px-1 de las imágenes, si lo tenías
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .image-normal {
+    position: relative;
+    z-index: 1;
+  }
+
+  .image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    .image-hover {
+      opacity: 1;
+    }
+
+    .image-normal {
+      opacity: 0;
+    }
+  }
+}
+
+.btn-outline-secondary {
+  background: transparent !important;
+  border-radius: 100px;
+  border: 1px solid #000 !important;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: color 0.3s ease;
+
+  .arrow-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 0px; // Ajusta al tamaño de tu flecha
+    height: 10px;
+  }
+
+  .arrow-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .arrow-current {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .arrow-incoming {
+    transform: translate(-14px, 40px); // Aparece desde abajo a la izquierda
+    opacity: 0;
+  }
+
+  &:hover {
+    .arrow-current {
+      transform: translate(14px, -40px); // Sube en diagonal opuesta
+      opacity: 0;
+    }
+
+    .arrow-incoming {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+}

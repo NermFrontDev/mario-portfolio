@@ -1,0 +1,29 @@
+footer {
+  background-color: #141A25;
+  padding: 42px 0;
+  color: white !important;
+  font-family: var(--Gotham-font-family);
+}
+.footer-title {
+  color: white !important;
+  font-family: var(--Reckless-font-family);
+  font-size: 24px;
+  font-style: italic;
+}
+
+.btn-outline-secondary {
+  font-family: var(--Gotham-font-family);
+  background: transparent !important;
+  border-radius: 100px;
+  border: 1px solid white !important;
+  padding: 16px 120px;
+  font-size: 14px;
+  &:hover {
+    color: white !important;
+  }
+}
+
+.btn-outline-secondary:hover {
+  background-color: white !important;
+  color: black !important;
+}

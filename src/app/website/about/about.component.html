@@ -1,0 +1,75 @@
+<section class="padding-section">
+  <div class="d-flex flex-column align-items-start justify-content-center gap-4">
+    <div class="gap-1">
+      <h1 class="title-website">Hello, I'm Mario García</h1>
+      <p class="m-0 description-website col-10">UUX/UI designer based in Mexico</p>
+    </div>
+    <p class="m-0 description-website col-10">I firmly believe that a great digital experience can transform the way people connect with brands, and the strong impact it has on business.</p>
+    <p class="m-0 description-website col-10">
+      I've been working in experience and interface design for digital products for over eight years, collaborating with creative teams and international brands such as <span class="description-bold">M&M's®, Lucas®, Snickers®, Ferrara®, CoverGirl®, among others.</span> I like to think that my work not only solves problems but also creates memorable moments for users.
+    </p>
+    <p class="m-0 description-website col-10">
+      I believe that design doesn't begin on the screen, but in life itself. <span class="description-bold">Every experience, every conversation, and every walk outdoors can be the start of a great idea.</span>
+    </p>
+    <p class="m-0 description-website col-10">
+      Outside of the digital world, <span class="description-bold">I love everything related to art. In my free time, I paint with oils,</span> a passion that allows me to disconnect, explore new ideas, and keep my creativity alive. I also enjoy skating in the park, changing the pace, clearing my mind, and finding inspiration in everyday life.
+    </p>
+    <!-- <a class="btn btn-outline-secondary py-3 col-12 col-lg-3 mt-3" href="#" target="_blank">
+      View Resume
+      <img class="ms-2" src="assets/images/icons/arrow.svg" alt="Arrow icons">
+    </a> -->
+
+    <a class="btn btn-outline-secondary py-3 col-12 col-lg-3 gap-3" href="#" target="_blank">
+      View Resume
+      <span class="arrow-wrapper">
+        <img class="arrow-icon arrow-current" src="assets/images/icons/arrow.svg" alt="Arrow icon">
+        <img class="arrow-icon arrow-incoming" src="assets/images/icons/arrow.svg" alt="Arrow icon">
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="container px-3 pb-5 mb-5">
+  <img class="img-about" src="assets/images/about/about_image.png" alt="About image">
+</section>
+
+<!-- <section class="container pb-5 mb-5">
+  <div class="d-flex flex-row align-items-start">
+    <div class="d-flex flex-column container-1">
+      <div class="image-wrapper image-1">
+        <img src="assets/images/about/gallery/image_1.png" alt="Imagen 1">
+      </div>
+      <div class="image-wrapper image-2">
+        <img src="assets/images/about/gallery/image_4.png" alt="Imagen 4">
+      </div>
+    </div>
+    <div class="d-flex flex-column container-2">
+      <div class="image-wrapper image-3">
+        <img src="assets/images/about/gallery/image_2.png" alt="Imagen 2">
+
+      </div>
+      <div class="image-wrapper image-4">
+        <img src="assets/images/about/gallery/image_5.png" alt="Imagen 5">
+      </div>
+    </div>
+    <div class="image-wrapper image-5">
+      <img src="assets/images/about/gallery/image_3.png" alt="Imagen 3">
+    </div>
+  </div>
+</section> -->
+
+<section class="projects-shared">
+  <div class="d-flex align-items-center justify-content-center">
+    <h4 class="text-capitalize text-center title-shared">View more Projects</h4>
+  </div>
+  <div class="cards-container container">
+    <div class="d-flex flex-column flex-lg-row align-items-start justify-content-between gap-5 gap-lg-0 px-2">
+      <a [routerLink]="['/projects/ferrara']" class="col-12 col-lg-5 text-decoration-none text-white">
+        <app-ferrara-card customClass="text-white bg-transparent border-0"></app-ferrara-card>
+      </a>
+      <a [routerLink]="['/projects/latitude']" class="col-12 col-lg-5 text-decoration-none text-white">
+        <app-latitud-card customClass="text-white bg-transparent border-0"></app-latitud-card>
+      </a>
+    </div>
+  </div>
+</section>

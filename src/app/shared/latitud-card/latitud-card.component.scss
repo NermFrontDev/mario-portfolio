@@ -1,0 +1,49 @@
+@import url(../../../styles.scss);
+
+.title-project {
+  font-size: 42px;
+  font-family: var(--Reckless-font-family);
+  font-style: var(--Reckless-font-italic);
+}
+
+:host {
+  display: block;
+
+  .arrow-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .arrow-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .arrow-current {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .arrow-incoming {
+    transform: translate(-14px, 40px);
+    opacity: 0;
+  }
+
+  // Aquí usamos :host-context para detectar hover en el <a> padre
+  :host-context(a:hover) {
+    .arrow-current {
+      transform: translate(14px, -40px);
+      opacity: 0;
+    }
+
+    .arrow-incoming {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+}

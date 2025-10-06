@@ -1,0 +1,37 @@
+.navbar {
+  font-family: var(--Gotham-font-family);
+  background: #f8f8f89a !important;
+  backdrop-filter: blur(12px);
+  position: sticky;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-nav {
+  gap: 32px;
+}
+
+.navbar-brand img {
+  width: 53.18px;
+  height: auto;
+}
+
+.btn-outline-secondary {
+  border-radius: 100px;
+  padding: 5px 80px;
+  font-size: 16px;
+}
+.btn-outline-secondary:hover {
+  background-color: black !important;
+  color: white !important;
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
+.active {
+  font-weight: bold;
+}

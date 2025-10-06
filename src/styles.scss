@@ -1,0 +1,90 @@
+:root {
+  --Gotham-font-family: "Gotham", Helvetica;
+  --Gotham-font-normal: normal;
+  --Gotham-font-italic: italic;
+
+  --Gotham-Bold-font-family: "Gotham-Bold", Helvetica;
+
+  --Reckless-font-family: "Reckless", Helvetica;
+  --Reckless-font-normal: normal;
+  --Reckless-font-italic: italic;
+
+  --Reckless-Light-font-family: "Reckless-Light", Helvetica;
+}
+
+/* ========= Gotham Font Family ========= */
+@font-face {
+  font-family: "Gotham";
+  src: url("assets/fonts/Gotham-Book.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("assets/fonts/Gotham-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========= Reckless Font Family ========= */
+@font-face {
+  font-family: "Reckless";
+  src: url("assets/fonts/Reckless-Book.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Reckless-Light";
+  src: url("assets/fonts/Reckless-Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+/* p,
+h1, h2, h3, h4, h5, h6,
+span, label, button {
+  color: #141A25;
+} */
+
+.padding-section {
+  padding: 90px 250px;
+}
+
+p {
+  font-size: 18px;
+  font-family: var(--Gotham-font-family);
+  font-weight: var(--Gotham-font-normal);
+}
+
+.btn-outline-secondary {
+  background: transparent !important;
+  border-radius: 100px;
+  border: 1px solid #000 !important;
+  font-size: 14px;
+  &:hover {
+    color: #000 !important;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .padding-section {
+    padding: 54px 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .btn-outline-secondary {
+    font-size: 16px;
+  }
+}

@@ -11,12 +11,14 @@
   gap: 8px;
   overflow: hidden;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  color: #141A25; /* Color por defecto del texto */
 
   .arrow-wrapper {
     position: relative;
     display: inline-block;
-    width: 0px; // Ajusta al tamaño de tu flecha
+    width: 0px; /* Ajusta al tamaño de tu flecha */
     height: 10px;
   }
 
@@ -24,7 +26,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
   }
 
   .arrow-current {
@@ -33,19 +35,25 @@
   }
 
   .arrow-incoming {
-    transform: translate(-14px, 40px); // Aparece desde abajo a la izquierda
+    transform: translate(-14px, 40px); /* Aparece desde abajo a la izquierda */
     opacity: 0;
   }
 
+  /* Hover: Fondo oscuro y texto blanco */
   &:hover {
+    background-color: #141A25 !important; /* Fondo oscuro */
+    color: #fff !important; /* Texto blanco */
+
     .arrow-current {
-      transform: translate(14px, -40px); // Sube en diagonal opuesta
+      transform: translate(14px, -40px); /* Sube en diagonal opuesta */
       opacity: 0;
+      filter: brightness(0) invert(1); /* Hace que la flecha cambie a blanco */
     }
 
     .arrow-incoming {
       transform: translate(0, 0);
       opacity: 1;
+      filter: brightness(0) invert(1); /* Hace que la flecha cambie a blanco */
     }
   }
 }

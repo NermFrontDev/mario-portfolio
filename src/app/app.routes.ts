@@ -51,12 +51,12 @@ export const routes: Routes = [
         (c) => c.JamieTurnerComponent
     ),
   },
-  /* {
+  {
     path: '**',
     loadComponent: () =>
       import('./website/home/home.component').then(
         (c) => c.HomeComponent
     ),
-  }, */
-  /* { path: '**', redirectTo: 'home', pathMatch: 'full' }, */
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

@@ -4,9 +4,36 @@
   font-size: 42px;
   font-family: var(--Reckless-font-family);
   font-style: var(--Reckless-font-italic);
+  position: relative;
+  display: inline-block;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
 }
 
 :host {
+  .title-project::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px; /* Grosor del subrayado */
+    width: 0;
+    background-color: #141A25;
+    transition: width 0.4s ease;
+  }
+
+  .img-container {
+    overflow: hidden; /* Evita que la imagen sobresalga al hacer zoom */
+    border-radius: 22px;
+  }
+
+  .img-container .card-img-top {
+    transition: transform 0.3s ease;
+  }
+
   display: block;
 
   .arrow-wrapper {
@@ -36,6 +63,11 @@
 
   // Aquí usamos :host-context para detectar hover en el <a> padre
   :host-context(a:hover) {
+
+    .title-project::after {
+      width: 100%;
+    }
+
     .arrow-current {
       transform: translate(14px, -40px);
       opacity: 0;
@@ -45,5 +77,10 @@
       transform: translate(0, 0);
       opacity: 1;
     }
+
+    .img-container .card-img-top {
+    transform: scale(1.1);
+  }
   }
 }
+

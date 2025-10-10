@@ -14,17 +14,6 @@
 }
 
 :host {
-  .title-project::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px; /* Grosor del subrayado */
-    width: 0;
-    background-color: #141A25;
-    transition: width 0.4s ease;
-  }
-
   .img-container {
     overflow: hidden; /* Evita que la imagen sobresalga al hacer zoom */
     border-radius: 22px;
@@ -63,11 +52,6 @@
 
   // Aquí usamos :host-context para detectar hover en el <a> padre
   :host-context(a:hover) {
-
-    .title-project::after {
-      width: 100%;
-    }
-
     .arrow-current {
       transform: translate(14px, -40px);
       opacity: 0;

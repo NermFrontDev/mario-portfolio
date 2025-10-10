@@ -3,9 +3,10 @@
     <a class="navbar-brand" routerLink="/">
       <img src="/assets/mg-logo.svg" alt="Logo Image">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#282c35" fill-rule="evenodd" d="M3.5 5a1 1 0 0 0 0 2h17a1 1 0 1 0 0-2zm-1 7a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1m0 6.001a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1" clip-rule="evenodd"/></svg>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav py-2 ms-auto mb-2 mb-lg-0 align-items-center">
         <li class="nav-item">
@@ -15,7 +16,7 @@
           <a class="nav-link" aria-current="page" [routerLinkActive]="['active']" [routerLink]="['/work']">Work</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="resume" target="_blank">Resume</a>
+          <a class="nav-link" href="https://drive.google.com/file/d/1_SL7PcPp0-Ga2pyr1OZdnDXDgyJwynru/view?usp=sharing" target="_blank">Resume</a>
         </li>
         <li class="nav-item">
           <a href="mailto:mariogarciaperdomo5@gmail.com" class="btn btn-outline-secondary text-capitalize">Hire Me</a>
@@ -27,3 +28,31 @@
     </div>
   </div>
 </nav>
+
+<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-header d-flex justify-content-end">
+    <!-- <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5> -->
+    <button type="button" class="close-icon pt-2 pe-2" data-bs-dismiss="offcanvas" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="none" stroke="#282c35" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5L12 5L19 5M5 12H19M5 19L12 19L19 19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L12 5L19 5M5 12H19M5 19L12 19L19 19;M5 5L12 12L19 5M12 12H12M5 19L12 12L19 19"/></path></svg>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav py-2 ms-auto mb-2 mb-lg-0 align-items-start px-3">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" [routerLink]="['/about']" [routerLinkActive]="['active']" data-bs-toggle="offcanvas">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" [routerLinkActive]="['active']" [routerLink]="['/work']" data-bs-toggle="offcanvas">Work</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://drive.google.com/file/d/1_SL7PcPp0-Ga2pyr1OZdnDXDgyJwynru/view?usp=sharing" target="_blank">Resume</a>
+      </li>
+      <li class="nav-item col-12">
+        <a href="mailto:mariogarciaperdomo5@gmail.com" class="btn btn-outline-secondary text-capitalize col-10 py-2">Hire Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://wa.me/523311291462" target="_blank">+52 33 1129 1462</a>
+      </li>
+    </ul>
+  </div>
+</div>

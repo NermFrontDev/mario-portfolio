@@ -74,6 +74,13 @@ p {
   }
 }
 
+/* iPad (portrait and landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .padding-section {
+    padding: 60px 40px;
+  }
+}
+
 
 @media (max-width: 767px) {
   .padding-section {

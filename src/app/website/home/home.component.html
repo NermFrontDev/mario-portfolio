@@ -1,8 +1,8 @@
 <section class="padding-section">
   <div class="d-flex flex-column align-items-center justify-content-center gap-4">
     <h1 class="title-website text-center">Hi!, I'm Mario García</h1>
-    <p class="m-0 description-website text-center col-10"><span class="description-bold">UX UI designer with over 8 years of experience creating user-centered digital experiences.</span> Throughout my career, I've designed digital products that combine functionality, aesthetics, and purpose, always focused on improving the user experience and achieving business objectives. <span class="description-bold"> I've worked with international brands such as M&M's<span class="fs-rights">®</span>, Lucas<span class="fs-rights">®</span>, Snickers<span class="fs-rights">®</span>, Ferrara<span class="fs-rights">®</span>, CoverGirl<span class="fs-rights">®</span>, </span> among others.</p>
-    <p class="m-0 description-website text-center col-10">I'm passionate about creating interfaces that not only look good, but also feel natural, accessible, and effective.</p>
+    <p class="m-0 description-website text-center col-12 col-lg-10"><span class="description-bold">UX UI designer with over 8 years of experience creating user-centered digital experiences.</span> Throughout my career, I've designed digital products that combine functionality, aesthetics, and purpose, always focused on improving the user experience and achieving business objectives. <span class="description-bold"> I've worked with international brands such as M&M's<span class="fs-rights">®</span>, Lucas<span class="fs-rights">®</span>, Snickers<span class="fs-rights">®</span>, Ferrara<span class="fs-rights">®</span>, CoverGirl<span class="fs-rights">®</span>, </span> among others.</p>
+    <p class="m-0 description-website text-center col-12 col-lg-10">I'm passionate about creating interfaces that not only look good, but also feel natural, accessible, and effective.</p>
   </div>
 </section>
 
@@ -20,18 +20,19 @@
   <div class="d-flex flex-column gap-5">
     <div class="d-flex flex-column flex-lg-row align-items-start justify-content-evenly gap-5 gap-lg-0">
       <a [routerLink]="['/projects/ferrara']" class="col-12 col-lg-5 text-decoration-none">
-        <app-ferrara-card></app-ferrara-card>
+        <app-ferrara-card customClass="light-version bg-transparent border-0"></app-ferrara-card>
       </a>
       <a [routerLink]="['/projects/latitude']" class="col-12 col-lg-5 text-decoration-none">
-        <app-latitud-card></app-latitud-card>
+        <app-latitud-card customClass="light-version bg-transparent border-0"></app-latitud-card>
+
       </a>
     </div>
     <div class="d-flex flex-column flex-lg-row align-items-start justify-content-evenly gap-5 gap-lg-0">
       <a [routerLink]="['/projects/jamie-turner']" class="col-12 col-lg-5 text-decoration-none">
-        <app-jamie-turner-card></app-jamie-turner-card>
+        <app-jamie-turner-card customClass="light-version bg-transparent border-0"></app-jamie-turner-card>
       </a>
       <a [routerLink]="['/projects/roland']" class="col-12 col-lg-5 text-decoration-none">
-        <app-roland-card></app-roland-card>
+        <app-roland-card customClass="light-version bg-transparent border-0"></app-roland-card>
       </a>
     </div>
   </div>

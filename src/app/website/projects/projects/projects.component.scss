@@ -63,7 +63,6 @@ figcaption {
   opacity: 60%;
 }
 
-
 .carousel-control-next, .carousel-control-prev {
   top: 35%;
   width: 50px;
@@ -81,6 +80,7 @@ figcaption {
 .caption-carousel {
   font-size: 16px;
   font-family: var(--Gotham-font-family);
+  opacity: 60%;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -124,6 +124,14 @@ figcaption {
 
 .cards-container {
   padding-bottom: 90px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .title-container {
+    .title-project {
+      font-size: 54px;
+    }
+  }
 }
 
 @media (max-width: 767px) {

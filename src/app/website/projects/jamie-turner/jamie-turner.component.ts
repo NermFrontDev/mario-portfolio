@@ -19,4 +19,6 @@ import { LatitudCardComponent } from "src/app/shared/latitud-card/latitud-card.c
 })
 export class JamieTurnerComponent {
 
+  videoSrc: string = 'assets/video/jamie_turner.mp4';
+
 }

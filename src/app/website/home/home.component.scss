@@ -4,6 +4,31 @@ p, h1, h2, h3, h4, h5, h6, span, li, a, button {
   color: #141A25;
 }
 
+.hero-bg {
+  background: #31846C;
+  background: -webkit-linear-gradient(90deg, rgba(49, 132, 108, 1) 0%, rgba(31, 86, 72, 1) 65%, rgba(10, 33, 31, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(49, 132, 108, 1) 0%, rgba(31, 86, 72, 1) 65%, rgba(10, 33, 31, 1) 100%);
+  background: linear-gradient(90deg, rgba(49, 132, 108, 1) 0%, rgba(31, 86, 72, 1) 65%, rgba(10, 33, 31, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#31846C", endColorstr="#0A211F", GradientType=1);
+  height: 90.1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  display: flex;
+  gap: 54px;
+  flex-direction: column;
+}
+
+.tagline-website {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white !important;
+  text-align: left;
+}
+
 .fs-rights {
   font-size: 12px;
   vertical-align: super;
@@ -11,7 +36,98 @@ p, h1, h2, h3, h4, h5, h6, span, li, a, button {
 
 .title-website {
   font-family: var(--Reckless-font-family);
+  color: white !important;
   font-size: 64px;
+  text-align: left;
+}
+
+.italic-hero {
+  font-style: italic;
+  text-transform: capitalize;
+  font-size: 64px;
+  font-weight: 400;
+  color: #D8FF85 !important;
+  text-align: left;
+}
+
+.cta-contain {
+  display: flex;
+  gap: 24px;
+}
+
+.btn-portfolio {
+  background-color: #D8FF85;
+  border-radius: 30px;
+  padding: 17px 32px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-outline-portfolio {
+  background-color: transparent;
+  border: 1.5px solid #D8FF85;
+  color: #D8FF85;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 16px;
+}
+.btn-outline-portfolio:hover {
+  background-color: #cfff69 !important;
+  color: black !important;
+}
+.btn-portfolio:hover {
+  background-color: #d8ff8564;
+  border: 1.5px solid #D8FF85;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 16px;
+}
+
+.awards-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.award-title {
+  font-family: var(--Reckless-font-family);
+  font-size: 54px;
+}
+.awards-cards {
+  .award-container {
+    width: 384px;
+    height: 250px;
+    /* .award-image {
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+    } */
+    .award-desc {
+      font-size: 14px;
+    }
+  }
+  .award-1 {
+    background: #8DFDBA;
+    .award-image {
+      width: 190px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .award-2 {
+    background: #EEF3E4;
+    .award-image {
+      width: 125px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .award-3 {
+    background: #D8FF85;
+    .award-title-1 {
+      font-family: var(--Reckless-font-family);
+      font-size: 100px;
+    }
+  }
 }
 
 .description-website {
@@ -54,4 +170,436 @@ p, h1, h2, h3, h4, h5, h6, span, li, a, button {
 
 .padding-bottom-section {
   padding-bottom: 60px;
+}
+
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+$wk-nav-height: 88px;
+$wk-stack-offset: 24px;
+$wk-radius: 28px;
+
+$wk-bg-section: #f3f1ea;
+$wk-ink: #1c1a17;
+$wk-ink-soft: rgba(#1c1a17, 0.7);
+$wk-cream: #f6f3ec;
+$wk-border: rgba(#1c1a17, 0.18);
+
+
+// ==========================================================================
+// Work Section
+// ==========================================================================
+
+.work-section {
+  background: $wk-bg-section;
+  padding-block: clamp(3rem, 6vw, 6rem);
+
+  &__header {
+    max-width: 640px;
+    margin: 0 auto clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+  }
+
+  &__eyebrow {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $wk-ink-soft;
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: $wk-ink;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $wk-ink-soft;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
+
+// ==========================================================================
+// Stack
+// ==========================================================================
+
+.work-stack {
+  position: relative;
+}
+
+.work-stack__item {
+  position: relative;
+}
+
+.work-stack__spacer {
+  display: none;
+}
+
+
+// ==========================================================================
+// Work Card
+// ==========================================================================
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: $wk-radius;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.35);
+  isolation: isolate;
+  color: #fff;
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+
+    // Overlay
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        100deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.25) 45%,
+        rgba(0, 0, 0, 0) 70%
+      );
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 460px;
+    padding: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  &__eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  &__desc {
+    margin-bottom: 1.75rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    opacity: 0.92;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    padding: 0.8rem 1.5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      background: #fff;
+      color: $wk-ink;
+
+      svg {
+        transform: translateX(3px);
+      }
+    }
+  }
+
+
+  // ------------------------------------------------------------------------
+  // Light Card
+  // ------------------------------------------------------------------------
+
+  &--light {
+    color: $wk-ink;
+
+    .work-card__media::after {
+      background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.55) 45%,
+        rgba(255, 255, 255, 0) 72%
+      );
+    }
+
+    .work-card__cta {
+      border-color: $wk-border;
+      color: $wk-ink;
+
+      &:hover {
+        background: $wk-ink;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+// ==========================================================================
+// DESKTOP
+// >= 992px
+// ==========================================================================
+
+@media (min-width: 992px) {
+
+  .work-stack__item {
+    position: sticky;
+
+    top: calc(
+      #{$wk-nav-height} +
+      (var(--i) * #{$wk-stack-offset})
+    );
+
+    z-index: calc(var(--i) + 1);
+  }
+
+  .work-card {
+    min-height: 560px;
+  }
+
+  .work-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+  }
+
+  .work-stack__spacer {
+    display: block;
+    height: 100vh;
+  }
+}
+
+
+// ==========================================================================
+// TABLET
+// 768px - 991px
+// ==========================================================================
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .work-stack {
+    padding-inline: 2rem;
+  }
+
+  .work-card {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+
+    &__media {
+      position: static;
+      height: 360px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &__content {
+      max-width: none;
+      background: $wk-cream;
+      color: $wk-ink;
+      padding: 2.5rem;
+    }
+
+    &__cta {
+      border-color: $wk-border;
+      color: $wk-ink;
+
+      &:hover {
+        background: $wk-ink;
+        color: #fff;
+      }
+    }
+
+    &--light {
+      color: $wk-ink;
+
+      .work-card__content {
+        background: $wk-cream;
+      }
+    }
+  }
+
+  .work-stack__item {
+    position: static;
+  }
+
+  .work-stack__spacer {
+    display: none;
+  }
+}
+
+
+// ==========================================================================
+// MOBILE
+// < 768px
+// ==========================================================================
+
+@media (max-width: 767px) {
+
+  .work-section {
+    padding-block: 3rem;
+  }
+
+  .work-section__header {
+    padding-inline: 1.25rem;
+  }
+
+  .work-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding-inline: 1.25rem;
+  }
+
+  .work-stack__item {
+    position: static;
+  }
+
+  .work-stack__spacer {
+    display: none;
+  }
+
+  .work-card {
+    color: $wk-ink;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.18);
+
+    &__media {
+      position: static;
+      height: 260px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &__content {
+      position: static;
+      max-width: none;
+
+      padding: 1.75rem 1.5rem 2rem;
+
+      background: $wk-cream;
+    }
+
+    &__eyebrow {
+      margin-bottom: 0.75rem;
+    }
+
+    &__title {
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.8rem, 8vw, 2.3rem);
+    }
+
+    &__desc {
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    &__cta {
+      border-color: $wk-border;
+      color: $wk-ink;
+
+      &:hover {
+        background: $wk-ink;
+        color: #fff;
+      }
+    }
+
+    &--light {
+      color: $wk-ink;
+
+      .work-card__content {
+        background: $wk-cream;
+      }
+    }
+  }
+}
+
+
+// ==========================================================================
+// SMALL MOBILE
+// < 480px
+// ==========================================================================
+
+@media (max-width: 479px) {
+
+  .work-stack {
+    padding-inline: 1rem;
+  }
+
+  .work-card {
+    border-radius: 18px;
+
+    &__media {
+      height: 220px;
+    }
+
+    &__content {
+      padding: 1.5rem 1.25rem 1.75rem;
+    }
+
+    &__cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .title-website {
+    font-family: var(--Reckless-font-family);
+    color: white !important;
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .italic-hero {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 42px;
+    font-weight: 400;
+    color: #D8FF85 !important;
+    text-align: center;
+  }
+  .tagline-website {
+    text-align: center;
+  }
 }

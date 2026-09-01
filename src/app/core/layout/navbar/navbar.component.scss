@@ -1,6 +1,7 @@
 .navbar {
   font-family: var(--Gotham-font-family);
-  background: #f8f8f89a !important;
+  background: black !important;
+  color: white !important;
   backdrop-filter: blur(12px);
   position: sticky;
   width: 100%;
@@ -22,6 +23,7 @@ button.navbar-toggler {
 
 .offcanvas-top {
   height: 100%;
+  background: black !important;
 }
 
 .navbar-nav {
@@ -33,20 +35,29 @@ button.navbar-toggler {
   height: auto;
 }
 
-.btn-outline-secondary {
-  border-radius: 100px;
-  padding: 5px 80px;
+.btn-outline-portfolio {
+  background-color: #D8FF85;
+  border-radius: 30px;
+  padding: 12px 32px;
   font-size: 16px;
 }
-.btn-outline-secondary:hover {
-  background-color: black !important;
-  color: white !important;
+.btn-outline-portfolio:hover {
+  background-color: #cfff69 !important;
+  color: black !important;
 }
 
 .nav-link {
-  font-size: 18px;
+  font-size: 14px;
+  color: white !important;
+  text-transform: uppercase;
 }
 
 .active {
   font-weight: bold !important;
+}
+
+@media (max-width: 576px) {
+  .nav-link {
+    font-size: 20px;
+  }
 }

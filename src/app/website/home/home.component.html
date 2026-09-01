@@ -1,8 +1,21 @@
-<section class="padding-section">
-  <div class="d-flex flex-column align-items-center justify-content-center gap-4">
-    <h1 class="title-website text-center">Hi!, I'm Mario García</h1>
-    <p class="m-0 description-website text-center col-12 col-lg-10"><span class="description-bold">UX UI designer with over 8 years of experience creating user-centered digital experiences.</span> Throughout my career, I've designed digital products that combine functionality, aesthetics, and purpose, always focused on improving the user experience and achieving business objectives. <span class="description-bold"> I've worked with international brands such as M&M's<span class="fs-rights">®</span>, Lucas<span class="fs-rights">®</span>, Snickers<span class="fs-rights">®</span>, Ferrara<span class="fs-rights">®</span>, CoverGirl<span class="fs-rights">®</span>, </span> among others.</p>
-    <p class="m-0 description-website text-center col-12 col-lg-10">I'm passionate about creating interfaces that not only look good, but also feel natural, accessible, and effective.</p>
+<section class="hero-bg">
+  <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
+    <div class="col-10 col-md-6 py-5 hero-text">
+      <span class="tagline-website">UX/UI LEAD & PRODUCT DESIGNER</span>
+      <h1 class="title-website text-capitalize">
+        Designing scalable digital experiences
+        <br/>
+        <span class="italic-hero text-capitalize">that drive business growth</span>
+      </h1>
+      <div class="d-flex flex-column flex-lg-row col-8 align-items-start align-items-lg-center justify-content-center cta-contain">
+        <a href="#" class="btn btn-portfolio text-uppercase py-3">View Case Studies</a>
+        <a href="#" class="btn btn-outline-portfolio text-uppercase col-5 py-3">Let's Talk</a>
+      </div>
+    </div>
+    <div class="col-6">
+      <img src="assets/images/image.png" alt="Hero Image" class="img-fluid hero-image" />
+      <!-- TODO: Add video grid mosaic here! -->
+    </div>
   </div>
 </section>
 
@@ -16,24 +29,108 @@
   </div>
 </section>
 
-<section class="container padding-bottom-section">
-  <div class="d-flex flex-column gap-5">
-    <div class="d-flex flex-column flex-lg-row align-items-start justify-content-evenly gap-5 gap-lg-0">
-      <a [routerLink]="['/projects/ferrara']" class="col-12 col-lg-5 text-decoration-none">
-        <app-ferrara-card customClass="light-version bg-transparent border-0"></app-ferrara-card>
-      </a>
-      <a [routerLink]="['/projects/latitude']" class="col-12 col-lg-5 text-decoration-none">
-        <app-latitud-card customClass="light-version bg-transparent border-0"></app-latitud-card>
+<section class="awards-section container mb-5">
+  <div class="container d-flex flex-column align-items-center justify-content-center gap-5">
+    <h2 class="text-center col-6 award-title">A product design partner you can trust</h2>
+    <div class="awards-cards d-flex flex-column flex-md-row align-items-center justify-content-center gap-5">
+      <div class="award-container award-1 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
+        <img src="assets/images/home/awards/award-1.svg" alt="Award 1" class="award-image" />
+        <p class="text-left text-uppercase award-desc">Nominated for Best  Digital Experience</p>
+      </div>
+      <div class="award-container award-2 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
+        <img src="assets/images/home/awards/award-2.svg" alt="Award 2" class="award-image" />
+        <p class="text-left text-uppercase award-desc">Featured on Inc. 5000 projects</p>
+      </div>
+      <div class="award-container award-3 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
+        <h2 class="award-title-1">45%</h2>
+        <p class="text-left text-uppercase award-desc">Faster Delivery Streamlined Workflows & AI Integration</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      </a>
+<!-- <section class="padding-section">
+</section> -->
+
+<section class="work-section" id="work">
+  <div class="container">
+    <div class="work-section__header">
+      <p class="work-section__eyebrow">Selected work &amp; case studies</p>
+      <h2 class="work-section__title">Shaping Digital Products</h2>
+      <p class="work-section__subtitle">
+        I lead design teams and creative direction to build scalable products
+        that align user needs with business goals.
+      </p>
     </div>
-    <div class="d-flex flex-column flex-lg-row align-items-start justify-content-evenly gap-5 gap-lg-0">
-      <a [routerLink]="['/projects/jamie-turner']" class="col-12 col-lg-5 text-decoration-none">
-        <app-jamie-turner-card customClass="light-version bg-transparent border-0"></app-jamie-turner-card>
-      </a>
-      <a [routerLink]="['/projects/roland']" class="col-12 col-lg-5 text-decoration-none">
-        <app-roland-card customClass="light-version bg-transparent border-0"></app-roland-card>
-      </a>
-    </div>
+  </div>
+
+  <div class="work-stack">
+
+    <!-- Card 1 — Jelly Belly -->
+    <article class="work-stack__item" style="--i:0;">
+      <div class="work-card">
+        <div class="work-card__media" style="background-image:url('/assets/img/work/jelly-belly.jpg');"></div>
+        <div class="work-card__content">
+          <p class="work-card__eyebrow">E-Commerce &bull; UX/UI Design &bull; Design System</p>
+          <h3 class="work-card__title">Jelly Belly</h3>
+          <p class="work-card__desc">
+            Streamlined product discovery, curated collection showcases, and
+            interactive flavor pairing journeys. Built a cohesive UI design
+            system to enhance user engagement and drive online sales.
+          </p>
+          <a href="#" class="work-card__cta">
+            Read case study
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 — Stash Tea -->
+    <article class="work-stack__item" style="--i:1;">
+      <div class="work-card">
+        <div class="work-card__media" style="background-image:url('/assets/img/work/stash-tea.jpg');"></div>
+        <div class="work-card__content">
+          <p class="work-card__eyebrow">E-Commerce &bull; UX Design &bull; Product Discovery</p>
+          <h3 class="work-card__title">Stash Tea</h3>
+          <p class="work-card__desc">
+            Simplified product discovery across 250+ unique tea blends,
+            custom gifts, and teaware. Created a warm, brand-focused UI
+            system that simplifies product discovery and boosts conversion.
+          </p>
+          <a href="#" class="work-card__cta">
+            Read case study
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 — Land O' Frost -->
+    <article class="work-stack__item" style="--i:2;">
+      <div class="work-card work-card--light">
+        <div class="work-card__media" style="background-image:url('/assets/img/work/land-o-frost.jpg');"></div>
+        <div class="work-card__content">
+          <p class="work-card__eyebrow">CPG Web Design &bull; Recipe &amp; Product Discovery</p>
+          <h3 class="work-card__title">Land O&rsquo; Frost</h3>
+          <p class="work-card__desc">
+            Integrated interactive store locators and dynamic recipe hubs to
+            drive offline purchase intent. Developed an accessible, scalable
+            UI system that highlights product freshness and nutritional value.
+          </p>
+          <a href="#" class="work-card__cta">
+            Read case study
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>

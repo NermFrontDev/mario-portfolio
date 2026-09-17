@@ -1,25 +1,36 @@
-<section class="hero-bg">
-  <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
-    <div class="col-10 col-md-6 py-5 hero-text">
+<section class="hero-bg overflow-hidden">
+  <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-lg-4">
+    <div class="col-11 col-lg-6 py-5 hero-text">
       <span class="tagline-website">UX/UI LEAD & PRODUCT DESIGNER</span>
       <h1 class="title-website text-capitalize">
         Designing scalable digital experiences
-        <br/>
+        <br />
         <span class="italic-hero text-capitalize">that drive business growth</span>
       </h1>
-      <div class="d-flex flex-column flex-lg-row col-8 align-items-start align-items-lg-center justify-content-center cta-contain">
-        <a href="#" class="btn btn-portfolio text-uppercase py-3">View Case Studies</a>
-        <a href="#" class="btn btn-outline-portfolio text-uppercase col-5 py-3">Let's Talk</a>
+      <div
+        class="container d-flex flex-column flex-lg-row col-12 align-items-start align-items-lg-center justify-content-start cta-contain px-0">
+        <a href="#" class="btn btn-portfolio text-uppercase col-12 col-md-5">View Case Studies</a>
+        <a href="#" class="btn btn-outline-portfolio text-uppercase d-flex align-items-center gap-2 col-12 col-md-4 justify-content-center">
+          Let's Talk
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 12h16m-7-7l7 7l-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
-    <div class="col-6">
-      <img src="assets/images/image.png" alt="Hero Image" class="img-fluid hero-image" />
-      <!-- TODO: Add video grid mosaic here! -->
+    <div class="col-7 d-none d-lg-block">
+      <div class="w-100">
+        <video class="video-grid" autoplay muted loop playsinline>
+          <source src="assets/video/video-grid.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="infinite-loop padding-section px-0">
+<section class="infinite-loop padding-section px-0 mt-5 mb-0">
   <div class="logo-carousel">
     <div class="logo-track">
       <ng-container *ngFor="let logo of duplicatedLogos">
@@ -29,20 +40,20 @@
   </div>
 </section>
 
-<section class="awards-section container mb-5">
-  <div class="container d-flex flex-column align-items-center justify-content-center gap-5">
-    <h2 class="text-center col-6 award-title">A product design partner you can trust</h2>
-    <div class="awards-cards d-flex flex-column flex-md-row align-items-center justify-content-center gap-5">
+<section class="awards-section container mb-5 pt-0">
+  <div class="container d-flex flex-column align-items-center justify-content-center gap-5 px-0">
+    <h2 class="text-center col-11 col-lg-6 award-title text-capitalize">A product design partner you can trust</h2>
+    <div class="awards-cards d-flex flex-column flex-lg-row align-items-center justify-content-between col-12 gap-5 gap-lg-0">
       <div class="award-container award-1 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
         <img src="assets/images/home/awards/award-1.svg" alt="Award 1" class="award-image" />
-        <p class="text-left text-uppercase award-desc">Nominated for Best  Digital Experience</p>
+        <p class="text-left text-uppercase award-desc">Nominated for Best Digital Experience</p>
       </div>
       <div class="award-container award-2 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
         <img src="assets/images/home/awards/award-2.svg" alt="Award 2" class="award-image" />
         <p class="text-left text-uppercase award-desc">Featured on Inc. 5000 projects</p>
       </div>
       <div class="award-container award-3 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
-        <h2 class="award-title-1">45%</h2>
+        <h2 #awardTitle class="award-title-1">45%</h2>
         <p class="text-left text-uppercase award-desc">Faster Delivery Streamlined Workflows & AI Integration</p>
       </div>
     </div>
@@ -55,82 +66,95 @@
 <section class="work-section" id="work">
   <div class="container">
     <div class="work-section__header">
-      <p class="work-section__eyebrow">Selected work &amp; case studies</p>
-      <h2 class="work-section__title">Shaping Digital Products</h2>
-      <p class="work-section__subtitle">
+      <p class="work-section__eyebrow text-dark">Selected work &amp; case studies</p>
+      <h2 class="work-section__title text-dark">Shaping Digital Products</h2>
+      <p class="work-section__subtitle text-dark">
         I lead design teams and creative direction to build scalable products
         that align user needs with business goals.
       </p>
     </div>
   </div>
 
-  <div class="work-stack">
+  <div class="work-stack container px-3">
 
     <!-- Card 1 — Jelly Belly -->
-    <article class="work-stack__item" style="--i:0;">
-      <div class="work-card">
-        <div class="work-card__media" style="background-image:url('/assets/img/work/jelly-belly.jpg');"></div>
-        <div class="work-card__content">
-          <p class="work-card__eyebrow">E-Commerce &bull; UX/UI Design &bull; Design System</p>
-          <h3 class="work-card__title">Jelly Belly</h3>
-          <p class="work-card__desc">
-            Streamlined product discovery, curated collection showcases, and
-            interactive flavor pairing journeys. Built a cohesive UI design
-            system to enhance user engagement and drive online sales.
-          </p>
-          <a href="#" class="work-card__cta">
-            Read case study
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+    <a href="#" class="container work-stack__item-link text-decoration-none">
+      <article class="work-stack__item" style="--i:0;">
+        <div class="work-card">
+          <div class="work-card__media"
+            style="background-image:url('/assets/images/home/works-cards/jelly-belly.png');"></div>
+          <div class="work-card__content">
+            <p class="work-card__eyebrow">E-Commerce &bull; UX/UI Design &bull; Design System</p>
+            <h3 class="work-card__title">Jelly Belly</h3>
+            <p class="work-card__desc">
+              Streamlined product discovery, curated collection showcases, and
+              interactive flavor pairing journeys. Built a cohesive UI design
+              system to enhance user engagement and drive online sales.
+            </p>
+            <a href="#" class="work-card__cta">
+              Read case study
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </a>
 
     <!-- Card 2 — Stash Tea -->
-    <article class="work-stack__item" style="--i:1;">
-      <div class="work-card">
-        <div class="work-card__media" style="background-image:url('/assets/img/work/stash-tea.jpg');"></div>
-        <div class="work-card__content">
-          <p class="work-card__eyebrow">E-Commerce &bull; UX Design &bull; Product Discovery</p>
-          <h3 class="work-card__title">Stash Tea</h3>
-          <p class="work-card__desc">
-            Simplified product discovery across 250+ unique tea blends,
-            custom gifts, and teaware. Created a warm, brand-focused UI
-            system that simplifies product discovery and boosts conversion.
-          </p>
-          <a href="#" class="work-card__cta">
-            Read case study
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+    <a href="#" class="container work-stack__item-link text-decoration-none">
+      <article class="work-stack__item" style="--i:1;">
+        <div class="work-card">
+          <div class="work-card__media" style="background-image:url('/assets/images/home/works-cards/stash.png');">
+          </div>
+          <div class="work-card__content">
+            <p class="work-card__eyebrow">E-Commerce &bull; UX Design &bull; Product Discovery</p>
+            <h3 class="work-card__title">Stash Tea</h3>
+            <p class="work-card__desc">
+              Simplified product discovery across 250+ unique tea blends,
+              custom gifts, and teaware. Created a warm, brand-focused UI
+              system that simplifies product discovery and boosts conversion.
+            </p>
+            <a href="#" class="work-card__cta">
+              Read case study
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </a>
 
     <!-- Card 3 — Land O' Frost -->
-    <article class="work-stack__item" style="--i:2;">
-      <div class="work-card work-card--light">
-        <div class="work-card__media" style="background-image:url('/assets/img/work/land-o-frost.jpg');"></div>
-        <div class="work-card__content">
-          <p class="work-card__eyebrow">CPG Web Design &bull; Recipe &amp; Product Discovery</p>
-          <h3 class="work-card__title">Land O&rsquo; Frost</h3>
-          <p class="work-card__desc">
-            Integrated interactive store locators and dynamic recipe hubs to
-            drive offline purchase intent. Developed an accessible, scalable
-            UI system that highlights product freshness and nutritional value.
-          </p>
-          <a href="#" class="work-card__cta">
-            Read case study
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+    <a href="#" class="container work-stack__item-link text-decoration-none">
+      <article class="work-stack__item" style="--i:2;">
+        <div class="work-card work-card--light">
+          <div class="work-card__media" style="background-image:url('/assets/images/home/works-cards/land-frost.png');">
+          </div>
+          <div class="work-card__content text-dark">
+            <p class="work-card__eyebrow text-dark">CPG Web Design &bull; Recipe &amp; Product Discovery</p>
+            <h3 class="work-card__title text-dark">Land O&rsquo; Frost</h3>
+            <p class="work-card__desc text-dark">
+              Integrated interactive store locators and dynamic recipe hubs to
+              drive offline purchase intent. Developed an accessible, scalable
+              UI system that highlights product freshness and nutritional value.
+            </p>
+            <a href="#" class="work-card__cta">
+              Read case study
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
-
+      </article>
+    </a>
   </div>
 </section>
+
+<app-testimonials></app-testimonials>

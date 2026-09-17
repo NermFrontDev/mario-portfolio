@@ -1,0 +1,113 @@
+<section class="testimonials-section">
+  <div class="testimonials-wrapper">
+    <!-- ==========================================
+        TESTIMONIAL CAROUSEL
+    =========================================== -->
+    <div class="testimonials-carousel d-none d-lg-block">
+      <div class="testimonials-stage">
+        <div *ngFor="
+            let testimonial of testimonials;
+            let i = index" class="testimonial-card" [class.is-active]="getPosition(i) === 0"
+          [class.is-visible]="
+            getPosition(i) === -1 ||
+            getPosition(i) === 0 ||
+            getPosition(i) === 1
+          " [style.--position]="
+            getPosition(i)
+          ">
+          <div class="d-flex flex-row align-items-center justify-content-center gap-4">
+            <!-- FOTO -->
+            <div class="testimonial-avatar">
+              <img [src]="testimonial.image" [alt]="testimonial.name" />
+            </div>
+            <!-- INFORMACIÓN -->
+            <div class="testimonial-information col-10 col-lg-7">
+              <!-- TESTIMONIO -->
+              <p class="testimonial-text">
+                <strong>
+                  {{ testimonial.highlight }}
+                </strong>
+                {{ testimonial.text }}
+              </p>
+              <!-- AUTOR -->
+              <div class="testimonial-author">
+                {{ testimonial.name }},
+                <span>
+                  {{ testimonial.position }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+        MOBILE CAROUSEL
+    =========================================== -->
+    <div id="carouselTestimonialsPortfolio" class="carousel slide d-lg-none w-100" data-bs-ride="carousel">
+
+      <!-- CAROUSEL -->
+      <div class="carousel-inner mt-5">
+        <div *ngFor="let testimonial of testimonials; let i = index" class="carousel-item"
+          [class.active]="i === 0">
+          <div class="d-flex flex-column align-items-center justify-content-center gap-4">
+            <!-- FOTO -->
+            <div class="testimonial-avatar">
+              <img [src]="testimonial.image" [alt]="testimonial.name" />
+            </div>
+            <!-- INFORMACIÓN -->
+            <div class="testimonial-information col-10 col-lg-7">
+              <!-- TESTIMONIO -->
+              <p class="testimonial-text">
+                <strong>
+                  {{ testimonial.highlight }}
+                </strong>
+                {{ testimonial.text }}
+              </p>
+              <!-- AUTOR -->
+              <div class="testimonial-author">
+                {{ testimonial.name }},
+                <span>
+                  {{ testimonial.position }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREVIOUS -->
+      <div class="container d-flex aling-items-center justify-content-between gap-4 mt-5">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonialsPortfolio"
+          data-bs-slide="prev" aria-label="Previous testimonial">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <!-- ROUNDED -->
+        <div class="carousel-indicators w-100">
+          <button *ngFor="let testimonial of testimonials; let i = index" type="button"
+            data-bs-target="#carouselTestimonialsPortfolio" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
+            [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <!-- NEXT -->
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonialsPortfolio"
+          data-bs-slide="next" aria-label="Next testimonial">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+      </div>
+
+    </div>
+    <!-- ==========================================
+        CONTROLS
+    =========================================== -->
+    <div class="testimonial-controls d-none d-lg-flex">
+      <button type="button" class="testimonial-control" aria-label="Previous testimonial" (click)="previous()">
+        <span>↑</span>
+      </button>
+      <button type="button" class="testimonial-control" aria-label="Next testimonial" (click)="next()">
+        <span>↓</span>
+      </button>
+    </div>
+  </div>
+</section>

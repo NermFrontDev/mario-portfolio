@@ -1,0 +1,592 @@
+/* =====================================================
+   SECTION
+===================================================== */
+
+.testimonials-section {
+
+  width: 100%;
+
+  min-height: 950px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: #0A211F;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  padding: 80px 7%;
+
+}
+
+
+/* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+.testimonials-wrapper {
+
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) 100px;
+
+  align-items: center;
+
+  column-gap: 70px;
+
+}
+
+
+/* =====================================================
+   CAROUSEL
+===================================================== */
+
+.testimonials-carousel {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 500px;
+
+  /*
+   * Esta es la perspectiva 3D.
+   */
+  perspective: 1200px;
+
+}
+
+
+/* =====================================================
+   3D STAGE
+===================================================== */
+
+.testimonials-stage {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  transform-style: preserve-3d;
+
+}
+
+
+/* =====================================================
+   TESTIMONIAL CARD
+===================================================== */
+
+.testimonial-card {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  width: 100%;
+
+  /*
+   * Altura del contenido.
+   */
+  min-height: 300px;
+
+  /*
+   * La posición vertical se calcula
+   * desde Angular.
+   */
+  transform:
+
+    translateY(calc(-50% + (var(--position) * 320px))) translateZ(-100px) scale(0.90) rotateX(3deg);
+
+
+  /*
+   * INACTIVOS
+   */
+  opacity: 0.10;
+
+
+  z-index: 1;
+
+
+  /*
+   * FUNDAMENTAL PARA EL EFECTO 3D
+   */
+  transform-style: preserve-3d;
+
+
+  /*
+   * Animación suave.
+   */
+  transition:
+
+    transform 0.85s cubic-bezier(0.65,
+      0,
+      0.35,
+      1),
+
+    opacity 0.7s ease-in-out;
+
+
+  /*
+   * Evita que elementos lejanos
+   * interfieran.
+   */
+  pointer-events: none;
+
+}
+
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.testimonial-card.is-active {
+
+  transform:
+
+    translateY(-50%) translateZ(0) scale(1) rotateX(0deg);
+
+
+  opacity: 1;
+
+
+  z-index: 5;
+
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.testimonial-avatar {
+
+  position: relative;
+
+  width: 220px;
+
+  height: 220px;
+
+  margin-bottom: 35px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #123b35;
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.testimonial-avatar img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+}
+
+
+/* =====================================================
+   INFORMATION
+===================================================== */
+
+.testimonial-information {
+
+  max-width: 850px;
+
+}
+
+
+/* =====================================================
+   TESTIMONIAL TEXT
+===================================================== */
+
+.testimonial-text {
+
+  margin: 0;
+  font-family: inherit;
+  color: #7ee7b1;
+
+  font-size: clamp(20px,
+      2vw,
+      20px);
+
+  line-height: 1.38;
+
+  font-weight: lighter;
+
+}
+
+
+.testimonial-text strong {
+
+  color: #72e6a9;
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   AUTHOR
+===================================================== */
+
+.testimonial-author {
+
+  margin-top: 40px;
+
+  color: #aebbb5;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+}
+
+
+.testimonial-author span {
+
+  font-weight: 400;
+
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.testimonial-controls {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.testimonial-control {
+
+  width: 64px;
+
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(220,
+      235,
+      227,
+      0.65);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #c9d6d0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+
+}
+
+
+.testimonial-control span {
+
+  font-size: 24px;
+
+  line-height: 1;
+
+}
+
+
+.testimonial-control:hover {
+
+  transform: scale(1.06);
+
+  background:
+    rgba(255,
+      255,
+      255,
+      0.08);
+
+  border-color: #ffffff;
+
+  color: #ffffff;
+
+}
+
+
+.testimonial-control:active {
+
+  transform: scale(0.94);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .testimonials-wrapper {
+
+    column-gap: 40px;
+    grid-template-columns: none;
+
+  }
+
+
+  .testimonial-avatar {
+
+    width: 230px;
+
+    height: 230px;
+
+  }
+
+
+  .testimonial-card {
+
+    transform:
+
+      translateY(calc(-50% + (var(--position) * 270px))) translateZ(-80px) scale(0.90) rotateX(3deg);
+
+  }
+
+
+  .testimonial-card.is-active {
+
+    transform:
+
+      translateY(-50%) translateZ(0) scale(1) rotateX(0);
+
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .testimonials-section {
+
+    min-height: auto;
+
+    padding: 70px 25px;
+
+  }
+
+
+  .testimonials-wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+  }
+
+
+  .testimonials-carousel {
+
+    height: 650px;
+
+    perspective: 1000px;
+
+  }
+
+
+  .testimonial-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    transform:
+
+      translateY(calc(-50% + (var(--position) * 350px))) translateZ(-70px) scale(0.90) rotateX(3deg);
+
+  }
+
+
+  .testimonial-card.is-active {
+
+    transform:
+
+      translateY(-50%) translateZ(0) scale(1) rotateX(0);
+
+  }
+
+
+  .testimonial-avatar {
+
+    width: 190px;
+
+    height: 190px;
+
+    margin-bottom: 30px;
+
+  }
+
+
+  .testimonial-information {
+
+    max-width: 100%;
+
+  }
+
+
+  .testimonial-text {
+
+    font-size: 20px;
+
+    line-height: 1.45;
+
+  }
+
+
+  .testimonial-author {
+
+    margin-top: 25px;
+
+    font-size: 16px;
+
+  }
+
+
+  .testimonial-controls {
+
+    flex-direction: row;
+
+  }
+
+
+  .testimonial-control {
+
+    width: 54px;
+
+    height: 54px;
+
+  }
+
+}
+
+/* ======================================================
+    MOBILE CAROUSEL
+====================================================== */
+
+.testimonial-card {
+  min-height: 280px;
+  padding: 40px 60px;
+}
+
+/* .testimonial-avatar {
+  flex: 0 0 auto;
+}
+
+.testimonial-avatar img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+} */
+
+.testimonial-information {
+  flex: 1;
+}
+
+.testimonial-text {
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+}
+
+.testimonial-author span {
+  font-weight: 400;
+}
+
+.carousel-inner {
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 480px;
+  transition: transform 0.6s ease-in-out;
+}
+
+button.carousel-control-next,
+button.carousel-control-prev {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+.carousel-indicators {
+  position: relative;
+  gap: 10px;
+}
+
+.carousel-indicators .active {
+  background-color: #8DFDBA !important;
+}
+
+.carousel-indicators > button {
+  /* position: relative; */
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50%;
+}

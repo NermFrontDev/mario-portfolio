@@ -1,28 +1,79 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FerraraCardComponent } from 'src/app/shared/ferrara-card/ferrara-card.component';
-import { LatitudCardComponent } from "src/app/shared/latitud-card/latitud-card.component";
-import { JamieTurnerCardComponent } from "src/app/shared/jamie-turner-card/jamie-turner-card.component";
-import { RolandCardComponent } from "src/app/shared/roland-card/roland-card.component";
-/* import { AppRoutingModule } from "src/app/app-routing.module"; */
-import { RouterLink } from '@angular/router';
+import { TestimonialsComponent } from "src/app/shared/testimonials/testimonials.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    FerraraCardComponent,
-    LatitudCardComponent,
-    JamieTurnerCardComponent,
-    RolandCardComponent,
-    /* AppRoutingModule, */
-    RouterLink,
+    TestimonialsComponent
 ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit, OnDestroy {
+
+  @ViewChild('awardTitle')
+  awardTitle!: ElementRef<HTMLHeadingElement>;
+
+  private observer?: IntersectionObserver;
+  private animationFrame?: number;
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry.isIntersecting) {
+          this.animatePercentage();
+
+          // Para que la animación ocurra solo una vez
+          this.observer?.disconnect();
+        }
+      },
+      {
+        threshold: 0.5
+      }
+    );
+
+    this.observer.observe(this.awardTitle.nativeElement);
+  }
+
+  private animatePercentage(): void {
+    const element = this.awardTitle.nativeElement;
+    const target = 45;
+    const duration = 2400;
+    const start = performance.now();
+
+    const animate = (currentTime: number) => {
+      const progress = Math.min(
+        (currentTime - start) / duration,
+        1
+      );
+
+      const value = Math.floor(progress * target);
+
+      element.textContent = `${value}%`;
+
+      if (progress < 1) {
+        this.animationFrame = requestAnimationFrame(animate);
+      } else {
+        element.textContent = `${target}%`;
+      }
+    };
+
+    this.animationFrame = requestAnimationFrame(animate);
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+    }
+  }
+
   logos: string[] = [
     '/assets/images/work/_logo-slider-1.svg',
     '/assets/images/work/_logo-slider-2.svg',

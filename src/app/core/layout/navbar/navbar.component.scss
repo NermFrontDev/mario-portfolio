@@ -35,7 +35,7 @@ button.navbar-toggler {
   height: auto;
 }
 
-.btn-outline-portfolio {
+/* .btn-outline-portfolio {
   background-color: #D8FF85;
   border-radius: 30px;
   padding: 12px 32px;
@@ -44,16 +44,41 @@ button.navbar-toggler {
 .btn-outline-portfolio:hover {
   background-color: #cfff69 !important;
   color: black !important;
+} */
+
+.work-card__cta {
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background-color: #D8FF85;
+  color: black;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 12px 38px;
+  font-size: 16px;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    background-color: #b2ff69 !important;
+    svg {
+      transform: translateX(3px);
+    }
+  }
 }
 
 .nav-link {
   font-size: 14px;
   color: white !important;
   text-transform: uppercase;
+  &:hover {
+    color: #b2ff69 !important;
+  }
 }
 
 .active {
   font-weight: bold !important;
+  color: #b2ff69 !important;
 }
 
 @media (max-width: 576px) {

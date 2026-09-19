@@ -61,7 +61,7 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   animationDirection: 'up' | 'down' = 'down';
 
   private autoPlayInterval: any;
-  private readonly AUTO_PLAY_TIME = 4000;
+  private readonly AUTO_PLAY_TIME = 7000;
 
 
   ngOnInit(): void {

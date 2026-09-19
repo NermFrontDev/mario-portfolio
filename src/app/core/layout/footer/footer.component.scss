@@ -59,3 +59,18 @@ footer {
     }
   }
 }
+
+.footer-link {
+  transition: 0.2s ease;
+}
+.footer-link:hover {
+  color: #b2ff69 !important;
+}
+.footer-link .svg-icon-animate {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.footer-link:hover .svg-icon-animate {
+  transform: translate(2px, -2px);
+}

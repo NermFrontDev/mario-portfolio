@@ -72,9 +72,9 @@ p, h1, h2, h3, h4, h5, h6, span, li, a, button {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .btn-portfolio:hover {
-  background-color: black;
-  border: 1.5px solid black;
-  color: white;
+  background-color: #b2ff69 !important;;
+  border: 1.5px solid #b2ff69;
+  color: black;
   border-radius: 30px;
   padding: 17px 32px;
   font-size: 16px;
@@ -554,7 +554,7 @@ $wk-border: rgba(#1c1a17, 0.18);
 
       padding: 1.75rem 1.5rem 2rem;
 
-      background: $wk-cream;
+      background: white !important;
     }
 
     &__eyebrow {
@@ -660,5 +660,49 @@ $wk-border: rgba(#1c1a17, 0.18);
   }
   .tagline-website {
     text-align: center;
+  }
+}
+
+/* Motion: masked line reveal */
+.masked-line {
+  display: block;
+  overflow: hidden;
+  min-height: 1.2em;
+}
+.masked-line > span {
+  display: block;
+  transform: translateY(110%);
+  animation: line-reveal 0.9s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  padding-bottom: 0.18em;
+  margin-bottom: -0.18em;
+}
+@keyframes line-reveal {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
   }
 }

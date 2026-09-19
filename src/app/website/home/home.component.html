@@ -1,14 +1,27 @@
 <section class="hero-bg overflow-hidden">
   <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-lg-4">
     <div class="col-11 col-lg-6 py-5 hero-text">
-      <span class="tagline-website">UX/UI LEAD & PRODUCT DESIGNER</span>
-      <h1 class="title-website text-capitalize">
-        Designing scalable digital experiences
-        <br />
-        <span class="italic-hero text-capitalize">that drive business growth</span>
-      </h1>
+      <span class="tagline-website fade-up">UX/UI LEAD & PRODUCT DESIGNER</span>
+      <div class="d-flex flex-column">
+        <span class="masked-line">
+          <span style="animation-delay: 0.1s"
+            class="inline-flex items-center gap-2 text-xs md:text-sm uppercase tracking-[0.3em] font-semibold text-primary">
+            <h1 class="title-website text-capitalize">
+              Designing scalable digital experiences
+            </h1>
+          </span>
+        </span>
+        <span class="masked-line">
+          <span style="animation-delay: 0.3s"
+            class="inline-flex items-center gap-2 text-xs md:text-sm uppercase tracking-[0.3em] font-semibold text-primary">
+            <h1 class="title-website text-capitalize">
+              <span class="italic-hero text-capitalize">that drive business growth</span>
+            </h1>
+          </span>
+        </span>
+      </div>
       <div
-        class="container d-flex flex-column flex-lg-row col-12 align-items-start align-items-lg-center justify-content-start cta-contain px-0">
+        class="fade-up container d-flex flex-column flex-lg-row col-12 align-items-start align-items-lg-center justify-content-start cta-contain px-0" style="animation-delay: 0.9s">
         <a href="#" class="btn btn-portfolio text-uppercase col-12 col-md-5">View Case Studies</a>
         <a href="#" class="btn btn-outline-portfolio text-uppercase d-flex align-items-center gap-2 col-12 col-md-4 justify-content-center">
           Let's Talk
@@ -42,17 +55,17 @@
 
 <section class="awards-section container mb-5 pt-0">
   <div class="container d-flex flex-column align-items-center justify-content-center gap-5 px-0">
-    <h2 class="text-center col-11 col-lg-6 award-title text-capitalize">A product design partner you can trust</h2>
+    <h2 class="text-center col-11 col-lg-6 award-title text-capitalize" data-aos="fade-up">A product design partner you can trust</h2>
     <div class="awards-cards d-flex flex-column flex-lg-row align-items-center justify-content-between col-12 gap-5 gap-lg-0">
-      <div class="award-container award-1 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
+      <div data-aos="fade-up" data-aos-delay="300" class="award-container award-1 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
         <img src="assets/images/home/awards/award-1.svg" alt="Award 1" class="award-image" />
         <p class="text-left text-uppercase award-desc">Nominated for Best Digital Experience</p>
       </div>
-      <div class="award-container award-2 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
+      <div data-aos="fade-up" data-aos-delay="600" class="award-container award-2 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
         <img src="assets/images/home/awards/award-2.svg" alt="Award 2" class="award-image" />
         <p class="text-left text-uppercase award-desc">Featured on Inc. 5000 projects</p>
       </div>
-      <div class="award-container award-3 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
+      <div data-aos="fade-up" data-aos-delay="900" class="award-container award-3 rounded-4 p-4 d-flex flex-column align-items-start justify-content-between">
         <h2 #awardTitle class="award-title-1">45%</h2>
         <p class="text-left text-uppercase award-desc">Faster Delivery Streamlined Workflows & AI Integration</p>
       </div>
@@ -66,9 +79,9 @@
 <section class="work-section" id="work">
   <div class="container">
     <div class="work-section__header">
-      <p class="work-section__eyebrow text-dark">Selected work &amp; case studies</p>
-      <h2 class="work-section__title text-dark">Shaping Digital Products</h2>
-      <p class="work-section__subtitle text-dark">
+      <p class="work-section__eyebrow text-dark" data-aos="fade-in" data-aos-duration="500">Selected work &amp; case studies</p>
+      <h2 class="work-section__title text-dark" data-aos="fade-up">Shaping Digital Products</h2>
+      <p class="work-section__subtitle text-dark" data-aos="fade-up" data-aos-delay="400">
         I lead design teams and creative direction to build scalable products
         that align user needs with business goals.
       </p>
@@ -81,8 +94,11 @@
     <a href="#" class="container work-stack__item-link text-decoration-none">
       <article class="work-stack__item" style="--i:0;">
         <div class="work-card">
-          <div class="work-card__media"
+          <div class="work-card__media d-none d-lg-block"
             style="background-image:url('/assets/images/home/works-cards/jelly-belly.png');"></div>
+            <!-- mobile image -->
+          <div class="work-card__media d-md-block d-lg-none"
+            style="background-image:url('/assets/images/home/works-cards/jelly-belly-mobile.png');"></div>
           <div class="work-card__content">
             <p class="work-card__eyebrow">E-Commerce &bull; UX/UI Design &bull; Design System</p>
             <h3 class="work-card__title">Jelly Belly</h3>
@@ -107,7 +123,10 @@
     <a href="#" class="container work-stack__item-link text-decoration-none">
       <article class="work-stack__item" style="--i:1;">
         <div class="work-card">
-          <div class="work-card__media" style="background-image:url('/assets/images/home/works-cards/stash.png');">
+          <div class="work-card__media d-none d-lg-block" style="background-image:url('/assets/images/home/works-cards/stash.png');">
+          </div>
+          <!-- mobile image -->
+          <div class="work-card__media d-block d-lg-none" style="background-image:url('/assets/images/home/works-cards/stash-mobile.png');">
           </div>
           <div class="work-card__content">
             <p class="work-card__eyebrow">E-Commerce &bull; UX Design &bull; Product Discovery</p>
@@ -133,7 +152,10 @@
     <a href="#" class="container work-stack__item-link text-decoration-none">
       <article class="work-stack__item" style="--i:2;">
         <div class="work-card work-card--light">
-          <div class="work-card__media" style="background-image:url('/assets/images/home/works-cards/land-frost.png');">
+          <div class="work-card__media d-none d-lg-block" style="background-image:url('/assets/images/home/works-cards/land-frost.png');">
+          </div>
+          <!-- mobile image -->
+          <div class="work-card__media d-block d-lg-none" style="background-image:url('/assets/images/home/works-cards/land-frost-mobile.png');">
           </div>
           <div class="work-card__content text-dark">
             <p class="work-card__eyebrow text-dark">CPG Web Design &bull; Recipe &amp; Product Discovery</p>

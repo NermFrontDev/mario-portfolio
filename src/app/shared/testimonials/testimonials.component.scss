@@ -565,6 +565,7 @@
 
 .carousel-item {
   height: 560px;
+  overflow-x: hidden;
   transition: transform 0.6s ease-in-out;
 }
 

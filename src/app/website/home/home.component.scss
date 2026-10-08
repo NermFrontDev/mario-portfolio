@@ -63,44 +63,89 @@ p, h1, h2, h3, h4, h5, h6, span, li, a, button {
 }
 
 .btn-portfolio {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background-color: #D8FF85;
   border-radius: 30px;
   border: 1.5px solid #D8FF85;
   padding: 17px 32px;
   font-size: 14.5px;
   font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.btn-portfolio:hover {
-  background-color: #b2ff69 !important;;
-  border: 1.5px solid #b2ff69;
   color: black;
-  border-radius: 30px;
-  padding: 17px 32px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #b2ff69;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    background-color: #D8FF85;
+    border: 1.5px solid #b2ff69;
+    color: black;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .btn-outline-portfolio {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background-color: transparent;
   border: 1.5px solid #D8FF85;
   color: #D8FF85;
   border-radius: 30px;
   padding: 17px 32px;
   font-size: 14.5px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+    border-radius: inherit;
+  }
 
   svg {
-      transition: transform 0.2s ease;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    border: 1.5px solid #D8FF85;
+    color: #D8FF85 !important;
+
+    &::before {
+      transform: scaleX(1);
     }
-    &:hover {
-      background-color: #b2ff69 !important;
-      svg {
-        transform: translateX(3px);
-      }
+
+    svg {
+      transform: translateX(3px);
     }
-}
-.btn-outline-portfolio:hover {
-  border: 1.5px solid #D8FF85;
-  background-color: rgba(255, 255, 255, 0.25) !important;
-  color: #D8FF85 !important;
+  }
 }
 
 .awards-section {
@@ -332,6 +377,9 @@ $wk-border: rgba(#1c1a17, 0.18);
   }
 
   &__cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -350,16 +398,36 @@ $wk-border: rgba(#1c1a17, 0.18);
     text-transform: uppercase;
 
     transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
+      border-color 0.3s ease,
+      color 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+      z-index: -1;
+      border-radius: inherit;
+    }
 
     svg {
+      position: relative;
+      z-index: 1;
       transition: transform 0.2s ease;
     }
 
     &:hover {
-      background: #fff;
       color: $wk-ink;
+
+      &::before {
+        transform: scaleX(1);
+      }
 
       svg {
         transform: translateX(3px);
@@ -388,9 +456,16 @@ $wk-border: rgba(#1c1a17, 0.18);
       border-color: $wk-border;
       color: $wk-ink;
 
+      &::before {
+        background-color: $wk-ink;
+      }
+
       &:hover {
-        background: $wk-ink;
         color: #fff;
+
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -484,9 +559,16 @@ $wk-border: rgba(#1c1a17, 0.18);
       border-color: $wk-border;
       color: $wk-ink;
 
+      &::before {
+        background-color: $wk-ink;
+      }
+
       &:hover {
-        background: $wk-ink;
         color: #fff;
+
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
 
@@ -581,9 +663,16 @@ $wk-border: rgba(#1c1a17, 0.18);
       border-color: $wk-border;
       color: $wk-ink;
 
+      &::before {
+        background-color: $wk-ink;
+      }
+
       &:hover {
-        background: $wk-ink;
         color: #fff;
+
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
 

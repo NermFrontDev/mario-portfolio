@@ -30,10 +30,16 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('awardTitle')
   awardTitle!: ElementRef<HTMLHeadingElement>;
 
+  @ViewChild('heroVideo')
+  heroVideo?: ElementRef<HTMLVideoElement>;
+
   private observer?: IntersectionObserver;
   private animationFrame?: number;
+  private videoCleanupFns: Array<() => void> = [];
 
   ngAfterViewInit(): void {
+    this.initHeroVideo();
+
     this.observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -51,6 +57,62 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     );
 
     this.observer.observe(this.awardTitle.nativeElement);
+  }
+
+  private initHeroVideo(): void {
+    const video = this.heroVideo?.nativeElement;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = true;
+
+    const startPlayback = () => {
+      if (video.paused) {
+        video.play().catch(() => {
+          // Autoplay policy prevented immediate playback; interaction handler will trigger it
+        });
+      }
+    };
+
+    // Trigger immediate playback
+    startPlayback();
+
+    const onCanPlay = () => startPlayback();
+    const onLoadedMetadata = () => startPlayback();
+    const onEnded = () => {
+      video.currentTime = 0;
+      startPlayback();
+    };
+    const onVisibilityChange = () => {
+      if (!document.hidden) {
+        startPlayback();
+      }
+    };
+
+    video.addEventListener('canplay', onCanPlay);
+    video.addEventListener('loadedmetadata', onLoadedMetadata);
+    video.addEventListener('ended', onEnded);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    // Interaction fallback for restrictive mobile browsers / battery saving modes
+    const interactionEvents = ['touchstart', 'touchend', 'click', 'scroll'];
+    const onFirstInteraction = () => {
+      startPlayback();
+      interactionEvents.forEach((evt) => window.removeEventListener(evt, onFirstInteraction));
+    };
+    interactionEvents.forEach((evt) =>
+      window.addEventListener(evt, onFirstInteraction, { passive: true, once: true })
+    );
+
+    this.videoCleanupFns.push(() => {
+      video.removeEventListener('canplay', onCanPlay);
+      video.removeEventListener('loadedmetadata', onLoadedMetadata);
+      video.removeEventListener('ended', onEnded);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      interactionEvents.forEach((evt) => window.removeEventListener(evt, onFirstInteraction));
+    });
   }
 
   private animatePercentage(): void {
@@ -85,6 +147,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     if (this.animationFrame) {
       cancelAnimationFrame(this.animationFrame);
     }
+
+    this.videoCleanupFns.forEach((cleanup) => cleanup());
+    this.videoCleanupFns = [];
   }
 
   logos: string[] = [

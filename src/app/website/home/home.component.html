@@ -35,7 +35,18 @@
     </div>
     <div class="col-11 col-lg">
       <div class="w-100">
-        <video class="video-grid" autoplay muted loop playsinline>
+        <video
+          #heroVideo
+          class="video-grid"
+          autoplay
+          muted
+          [muted]="true"
+          loop
+          playsinline
+          webkit-playsinline
+          preload="auto"
+          disablePictureInPicture
+          controlslist="nodownload nofullscreen noremoteplayback">
           <source src="assets/video/video-hero.mp4" type="video/mp4">
         </video>
       </div>

@@ -449,6 +449,10 @@ $wk-border: rgba(#1c1a17, 0.18);
 
 @media (min-width: 768px) and (max-width: 991px) {
 
+  .hero-bg {
+    height: 115vh;
+  }
+
   .work-stack {
     padding-inline: 2rem;
     display: flex;
@@ -457,6 +461,7 @@ $wk-border: rgba(#1c1a17, 0.18);
   }
 
   .work-card {
+    background: white;
     /* box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25); */
 
     &__media {
@@ -470,7 +475,7 @@ $wk-border: rgba(#1c1a17, 0.18);
 
     &__content {
       max-width: none;
-      background: $wk-cream;
+      background: white;
       color: white;
       padding: 2.5rem;
     }
@@ -489,7 +494,7 @@ $wk-border: rgba(#1c1a17, 0.18);
       color: $wk-ink;
 
       .work-card__content {
-        background: $wk-cream;
+        background: white;
       }
     }
   }

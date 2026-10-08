@@ -78,13 +78,13 @@
       </div>
 
       <!-- PREVIOUS -->
-      <div class="container d-flex aling-items-center justify-content-between gap-4 mt-5">
+      <div class="container d-flex aling-items-center justify-content-center justify-content-lg-between gap-4 mt-5">
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonialsPortfolio"
           data-bs-slide="prev" aria-label="Previous testimonial">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </button>
         <!-- ROUNDED -->
-        <div class="carousel-indicators w-100">
+        <div class="carousel-indicators">
           <button *ngFor="let testimonial of testimonials; let i = index" type="button"
             data-bs-target="#carouselTestimonialsPortfolio" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
             [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>

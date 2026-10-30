@@ -106,17 +106,17 @@ export class JellyBellyComponent {
   private readonly imagePath = 'assets/images/projects/jelly-belly';
 
   firstSlides: CarouselSlide[] = Array.from({ length: 6 }, (_, i) => ({
-    image: `${this.imagePath}/carousel-1/img-${i + 1}.png`,
+    image: `${this.imagePath}/carousel-1/img-${i + 1}.webp`,
     alt: `Jelly Belly creative concept ${i + 1}`,
   }));
 
   secondSlides: CarouselSlide[] = Array.from({ length: 6 }, (_, i) => ({
-    image: `${this.imagePath}/carousel-2/img-${i + 1}.png`,
+    image: `${this.imagePath}/carousel-2/img-${i + 1}.webp`,
     alt: `Jelly Belly design exploration ${i + 1}`,
   }));
 
   thirdSlides: CarouselSlide[] = Array.from({ length: 4 }, (_, i) => ({
-    image: `${this.imagePath}/carousel-3/img-${i + 1}.png`,
+    image: `${this.imagePath}/carousel-3/img-${i + 1}.webp`,
     alt: `Jelly Belly design exploration ${i + 1}`,
   }));
 }

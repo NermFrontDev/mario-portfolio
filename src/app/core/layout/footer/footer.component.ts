@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import * as AOS from 'aos';
 
 @Component({
@@ -12,6 +13,12 @@ import * as AOS from 'aos';
 export class FooterComponent {
 
   actualYear: number = new Date().getFullYear();
+
+  constructor(private router: Router) {}
+
+  get isProjectPage(): boolean {
+    return this.router.url.startsWith('/projects/');
+  }
 
   ngOnInit(): void {
       AOS.init({

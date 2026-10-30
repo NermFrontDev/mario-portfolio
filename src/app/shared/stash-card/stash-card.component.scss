@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.title-project {
+  font-size: 42px;
+  font-family: var(--Reckless-font-family);
+  /* font-style: var(--Reckless-font-italic); */
+  position: relative;
+  display: inline-block;
+}
+
+.card {
+  border-radius: 24px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.img-container {
+  overflow: hidden; /* Evita que la imagen sobresalga al hacer zoom */
+  border-radius: 22px;
+}
+
+.img-container .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+:host {
+  display: block;
+}
+
+// Animación del hover, no se ve afectada por el filtro
+:host-context(a:hover) {
+  .img-container .card-img-top {
+    transform: scale(1.1);
+  }
+}
+
+// Para fondo claro (home) - sin inversión de color
+:host(.light-version) {
+  .arrow-icon {
+    filter: none; /* Sin filtro para la flecha */
+  }
+}
+
+:host(.dark-version) {
+  .arrow-icon {
+    filter: invert(1); /* Esto debería cambiar la flecha a blanco */
+  }
+}
+
+.btn-outline-secondary {
+  background: transparent !important;
+  border-radius: 100px;
+  border: 1px solid #000 !important;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  transition: color 0.3s ease, border-color 0.3s ease;
+
+  color: #141A25; /* Color por defecto del texto */
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141A25;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .arrow-wrapper {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 0px; /* Ajusta al tamaño de tu flecha */
+    height: 10px;
+  }
+
+  .arrow-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+  }
+
+  .arrow-current {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .arrow-incoming {
+    transform: translate(-14px, 40px); /* Aparece desde abajo a la izquierda */
+    opacity: 0;
+  }
+
+  /* Hover: Fondo oscuro de izquierda a derecha y texto blanco */
+  &:hover {
+    color: #fff !important; /* Texto blanco */
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .arrow-current {
+      transform: translate(14px, -40px); /* Sube en diagonal opuesta */
+      opacity: 0;
+      filter: brightness(0) invert(1); /* Hace que la flecha cambie a blanco */
+    }
+
+    .arrow-incoming {
+      transform: translate(0, 0);
+      opacity: 1;
+      filter: brightness(0) invert(1); /* Hace que la flecha cambie a blanco */
+    }
+  }
+}

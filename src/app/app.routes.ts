@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './website/home/home.component';
 
 export const routes: Routes = [
   {
@@ -50,6 +49,27 @@ export const routes: Routes = [
       import('./website/projects/jamie-turner/jamie-turner.component').then(
         (c) => c.JamieTurnerComponent
     ),
+  },
+  {
+    path: 'projects/stash-tea',
+    loadComponent: () =>
+      import('./website/projects/stash-tea/stash-tea.component').then(
+        (c) => c.StashTeaComponent
+    ),
+  },
+  {
+    path: 'projects/landfrost',
+    loadComponent: () =>
+      import('./website/projects/landfrost/landfrost.component').then(
+        (c) => c.LandfrostComponent
+      )
+  },
+  {
+    path: 'projects/jelly-belly',
+    loadComponent: () =>
+      import('./website/projects/jelly-belly/jelly-belly.component').then(
+        (c) => c.JellyBellyComponent
+    )
   },
   {
     path: '**',

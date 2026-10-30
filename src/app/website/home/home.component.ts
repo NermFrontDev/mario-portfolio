@@ -2,13 +2,15 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@ang
 import { CommonModule } from '@angular/common';
 import { TestimonialsComponent } from "src/app/shared/testimonials/testimonials.component";
 import * as AOS from 'aos';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    TestimonialsComponent
+    TestimonialsComponent,
+    RouterLink
 ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

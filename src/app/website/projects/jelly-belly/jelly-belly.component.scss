@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import '../../../../styles.scss';
 @import url(../projects/projects.component.scss);
 
@@ -28,19 +28,22 @@
 
 .text-content {
   p {
-    font-family: "Barlow Semi Condensed", sans-serif !important;
-    font-weight: 300 !important;
+    font-family: "Barlow", sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 180%;
   }
 }
 .list-project {
-  font-family: "Barlow Semi Condensed", sans-serif !important;
-  font-weight: 300 !important;
+  font-family: "Barlow", sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 180%;
 }
 
 .project-detail {
   font-size: 18px;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 300;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400 !important;
+  line-height: 180%;
 }
 
 .quote__graphic {
@@ -206,7 +209,7 @@ video.video-grid {
   .title-shared {
     color: #2b2b2b !important;
     .projects-eyebrow {
-      font-family: "Barlow Semi Condensed", sans-serif;
+      font-family: "Barlow", sans-serif;
       font-size: 16px;
     }
     h4 {
@@ -225,7 +228,7 @@ video.video-grid {
   .projects-shared {
     .title-shared {
       .projects-eyebrow {
-        font-family: "Barlow Semi Condensed", sans-serif;
+        font-family: "Barlow", sans-serif;
         font-size: 16px;
       }
       h4 {
@@ -245,7 +248,7 @@ video.video-grid {
   .projects-shared {
     .title-shared {
       .projects-eyebrow {
-        font-family: "Barlow Semi Condensed", sans-serif;
+        font-family: "Barlow", sans-serif;
         font-size: 16px;
       }
       h4 {

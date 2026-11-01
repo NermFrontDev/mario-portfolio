@@ -1,7 +1,7 @@
 <section id="jelly-belly" class="project-hero">
   <div class="d-flex align-items-center justify-content-center">
-    <img class="hero-belly d-none d-lg-block" src="assets/images/projects/jelly-belly/hero-jelly.webp" alt="Jelly Belly HeroImage"/>
-    <img class="hero-belly d-block d-lg-none" src="assets/images/projects/jelly-belly/hero-mobile.webp" alt="Jelly Belly HeroImage"/>
+    <img class="hero-belly d-none d-lg-block" [class.hero-belly--scrolled]="isScrolled" src="assets/images/projects/jelly-belly/hero-jelly.webp" alt="Jelly Belly HeroImage"/>
+    <img class="hero-belly d-block d-lg-none" [class.hero-belly--scrolled]="isScrolled" src="assets/images/projects/jelly-belly/hero-mobile.webp" alt="Jelly Belly HeroImage"/>
   </div>
 </section>
 

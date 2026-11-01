@@ -18,6 +18,11 @@
   height: auto;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+  transition: width 0.3s ease;
+}
+
+.hero-belly--scrolled {
+  width: 86%;
 }
 
 .project-subtitle {

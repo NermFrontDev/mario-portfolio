@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselComponent, CarouselSlide } from 'src/app/shared/carousel/carousel.component';
 import { StashCardComponent } from 'src/app/shared/stash-card/stash-card.component';
@@ -20,6 +20,8 @@ import { LandfrostCardComponent } from 'src/app/shared/landfrost-card/landfrost-
 })
 export class JellyBellyComponent {
 
+  isScrolled = false;
+
   @ViewChildren(CarouselComponent)
   carousels!: QueryList<CarouselComponent>;
 
@@ -27,6 +29,11 @@ export class JellyBellyComponent {
   storyVideo?: ElementRef<HTMLVideoElement>;
 
   private videoCleanupFns: Array<() => void> = [];
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.isScrolled = window.scrollY > 0;
+  }
 
   ngAfterViewInit(): void {
     this.initStoryVideo();
